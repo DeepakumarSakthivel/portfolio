@@ -1,40 +1,77 @@
-body{
+/* ===== Global ===== */
+
+*{
 margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
+padding:0;
+box-sizing:border-box;
 }
 
-/* Navbar */
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+/* ===== Navbar ===== */
 
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 10%;
 background:#020617;
 position:sticky;
 top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.4);
 }
 
 nav ul{
 display:flex;
-gap:20px;
+gap:25px;
 list-style:none;
 }
 
 nav a{
 color:white;
 text-decoration:none;
+font-weight:500;
+position:relative;
+transition:0.3s;
 }
 
-/* Hero */
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:#38bdf8;
+left:0;
+bottom:-4px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* ===== Hero Section ===== */
 
 .hero{
-height:90vh;
+min-height:90vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
+background:linear-gradient(120deg,#020617,#0f172a);
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
 }
 
 .hero span{
@@ -44,31 +81,59 @@ color:#38bdf8;
 .typing{
 color:#38bdf8;
 margin:10px 0;
+font-weight:500;
 }
+
+.hero-text p{
+margin:15px 0 25px 0;
+color:#cbd5f5;
+}
+
+/* ===== Buttons ===== */
 
 .btn{
 background:#38bdf8;
-padding:10px 20px;
+padding:12px 25px;
 color:black;
 text-decoration:none;
 margin-right:10px;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#0ea5e9;
+transform:translateY(-2px);
 }
 
 .btn2{
-border:1px solid white;
-padding:10px 20px;
+border:1px solid #38bdf8;
+padding:12px 25px;
 text-decoration:none;
-color:white;
+color:#38bdf8;
+border-radius:6px;
+transition:0.3s;
 }
 
-/* Sections */
+.btn2:hover{
+background:#38bdf8;
+color:black;
+}
+
+/* ===== Sections ===== */
 
 section{
-padding:80px 10%;
+padding:90px 10%;
 text-align:center;
 }
 
-/* Skills */
+section h2{
+margin-bottom:30px;
+font-size:32px;
+}
+
+/* ===== Skills ===== */
 
 .skill-container{
 display:flex;
@@ -81,9 +146,15 @@ justify-content:center;
 background:#1e293b;
 padding:15px 25px;
 border-radius:8px;
+transition:0.3s;
 }
 
-/* Projects */
+.skill:hover{
+background:#334155;
+transform:translateY(-4px);
+}
+
+/* ===== Projects ===== */
 
 .project-container{
 display:flex;
@@ -94,45 +165,48 @@ justify-content:center;
 
 .card{
 background:#1e293b;
-padding:25px;
-border-radius:10px;
-width:250px;
+padding:30px;
+border-radius:12px;
+width:260px;
 transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
 .card:hover{
-transform:scale(1.08);
+transform:translateY(-8px);
 background:#334155;
 }
 
-/* Footer */
-
-footer{
-background:#020617;
-padding:20px;
-text-align:center;
-}
-.hero-container{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:80px;
-flex-wrap:wrap;
-}
+/* ===== Hero Image ===== */
 
 .hero-image img{
 width:260px;
 border-radius:50%;
 border:5px solid #38bdf8;
-box-shadow:0 0 30px #38bdf8;
-
+box-shadow:0 0 40px rgba(56,189,248,0.8);
+transition:0.3s;
 }
 
-/* ===============================
-   Responsive Design
-================================= */
+.hero-image img:hover{
+transform:scale(1.05);
+}
 
-/* Tablets (max-width: 1024px) */
+/* ===== Footer ===== */
+
+footer{
+background:#020617;
+padding:25px;
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#94a3b8;
+}
+
+/* ==================================
+   Responsive Design
+=================================== */
+
+/* Tablets */
 
 @media (max-width:1024px){
 
@@ -148,8 +222,7 @@ width:220px;
 
 nav{
 flex-direction:column;
-align-items:center;
-gap:15px;
+gap:10px;
 }
 
 .project-container{
@@ -158,13 +231,11 @@ gap:20px;
 
 }
 
-
-/* Mobile Devices (max-width:768px) */
+/* Mobile */
 
 @media (max-width:768px){
 
 .hero{
-height:auto;
 padding:60px 20px;
 }
 
@@ -195,8 +266,7 @@ padding:60px 20px;
 
 }
 
-
-/* Small Phones (max-width:480px) */
+/* Small phones */
 
 @media (max-width:480px){
 
@@ -209,12 +279,12 @@ width:180px;
 }
 
 .btn{
-padding:8px 15px;
+padding:8px 16px;
 font-size:14px;
 }
 
 .btn2{
-padding:8px 15px;
+padding:8px 16px;
 font-size:14px;
 }
 
@@ -224,7 +294,7 @@ font-size:14px;
 }
 
 footer{
-font-size:14px;
+font-size:13px;
 }
 
 }
