@@ -125,4 +125,106 @@ width:260px;
 border-radius:50%;
 border:5px solid #38bdf8;
 box-shadow:0 0 30px #38bdf8;
+
+}
+
+/* ===============================
+   Responsive Design
+================================= */
+
+/* Tablets (max-width: 1024px) */
+
+@media (max-width:1024px){
+
+.hero-container{
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+
+.hero-image img{
+width:220px;
+}
+
+nav{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.project-container{
+gap:20px;
+}
+
+}
+
+
+/* Mobile Devices (max-width:768px) */
+
+@media (max-width:768px){
+
+.hero{
+height:auto;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+nav ul{
+flex-direction:column;
+gap:10px;
+}
+
+.skill-container{
+gap:15px;
+}
+
+.card{
+width:90%;
+}
+
+section{
+padding:60px 20px;
+}
+
+}
+
+
+/* Small Phones (max-width:480px) */
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:24px;
+}
+
+.hero-image img{
+width:180px;
+}
+
+.btn{
+padding:8px 15px;
+font-size:14px;
+}
+
+.btn2{
+padding:8px 15px;
+font-size:14px;
+}
+
+.skill{
+padding:10px 15px;
+font-size:14px;
+}
+
+footer{
+font-size:14px;
+}
+
 }
