@@ -127,13 +127,7 @@ border:5px solid #38bdf8;
 box-shadow:0 0 30px #38bdf8;
 }
 
-.social-links{
-margin-top:20px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
+
 
 .social-links a{
 text-decoration:none;
