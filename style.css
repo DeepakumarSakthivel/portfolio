@@ -126,3 +126,25 @@ border-radius:50%;
 border:5px solid #38bdf8;
 box-shadow:0 0 30px #38bdf8;
 }
+
+.social-links{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.social-links a{
+text-decoration:none;
+color:#38bdf8;
+border:1px solid #38bdf8;
+padding:10px 20px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.social-links a:hover{
+background:#38bdf8;
+color:black;
+}
